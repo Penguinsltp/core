@@ -249,23 +249,6 @@ fn MyInt64::ctz(self : MyInt64) -> Int {
 }
 
 ///|
-/// Computes the population count (number of set bits) in this 64-bit integer.
-///
-/// The operation sums the number of set bits in both the high and low 32-bit
-/// components of the 64-bit value, following the standard popcnt algorithm.
-///
-/// Parameters:
-///
-/// - `self` : The `MyInt64` instance for which to compute the population count.
-///
-/// Returns an `Int` representing the total number of set bits (1-bits) in the
-/// binary representation of the 64-bit integer.
-///
-/// # Example
-/// ```moonbit
-///   let myInt64 = MyInt64{hi: 0x01, lo: 0xFF}
-///   assert_eq(myInt64.popcnt(), 9)  // 1 bit in hi + 8 bits in lo
-/// ```
 fn MyInt64::popcnt(self : MyInt64) -> Int {
   self.hi.popcnt() + self.lo.popcnt()
 }
